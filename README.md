@@ -1,16 +1,20 @@
-# React + Vite
+# web2app-pwa: React 기반 OCR 연동 웹 애플리케이션 데모
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 프로젝트는 React와 Vite를 사용하여 구축되었으며, 외부 환경(WebView)으로부터 OCR 결과를 수신하고 처리하는 웹 애플리케이션의 동작을 시연합니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 주요 기능
 
-## React Compiler
+* **카메라 기능 호출 (브릿지)**: 외부 환경에 정의된 네이티브 함수인 `window.Android.startCamera()` 호출을 통해 카메라 기능을 시작하도록 설계되었습니다.
+* **OCR 결과 수신 콜백**: 외부 환경으로부터 OCR 처리 결과를 전역 콜백 함수인 `window.onOcrResult(payload)`를 통해 수신합니다.
+* **결과 파싱 및 표시**: 수신된 `payload` (문자열 JSON 또는 객체)를 파싱하여 화면에 Raw JSON과 파싱된 핵심 데이터(**ID, 생성 시각, 원본 텍스트**)를 명확하게 표시합니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 프로젝트 기술 스택
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **프레임워크**: React (버전 19.2.0)
+* **빌드 도구**: Vite (버전 7.2.2)
+* **번들러 플러그인**: `@vitejs/plugin-react`
+* **린트**: ESLint (버전 9.39.1)
