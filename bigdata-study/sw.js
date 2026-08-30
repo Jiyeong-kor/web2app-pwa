@@ -14,7 +14,6 @@ const APP_SHELL = [
   './app-events.js',
   './manifest.webmanifest',
   './icon-192.png',
-  './icon-512.png',
   './apple-touch-icon.png'
 ];
 
