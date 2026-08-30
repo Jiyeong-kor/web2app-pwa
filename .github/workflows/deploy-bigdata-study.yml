@@ -24,10 +24,8 @@ jobs:
       - name: 저장소 가져오기
         uses: actions/checkout@v4
 
-      - name: GitHub Pages 구성
+      - name: GitHub Pages 구성 확인
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: 정적 앱 업로드
         uses: actions/upload-pages-artifact@v4
